@@ -1,0 +1,128 @@
+/* EduShop - Student E-Commerce Stylesheet */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f4f8;
+    color: #2d3748;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: #2b6cb0;
+    color: white;
+    padding: 14px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+}
+.navbar .logo { font-size: 1.3rem; font-weight: bold; }
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Card */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 36px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+}
+.card.wide { max-width: 100%; margin: 0; }
+.card h2 { margin-bottom: 24px; color: #2b6cb0; font-size: 1.4rem; }
+.logo { font-size: 2rem; text-align: center; display: block; margin-bottom: 8px; }
+
+/* Form */
+.form-group { margin-bottom: 18px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+label { display: block; margin-bottom: 6px; font-weight: 500; font-size: 0.9rem; color: #4a5568; }
+input[type="text"], input[type="email"], input[type="password"],
+input[type="number"], select, textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+    outline: none;
+}
+input:focus { border-color: #2b6cb0; }
+.error-msg { color: #e53e3e; font-size: 0.82rem; margin-top: 4px; display: block; }
+
+/* Buttons */
+.btn {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s;
+}
+.btn:hover { opacity: 0.88; }
+.btn-primary { background: #2b6cb0; color: white; width: 100%; padding: 12px; font-size: 1rem; }
+.btn-small { background: #e2e8f0; color: #2d3748; padding: 6px 14px; font-size: 0.85rem; }
+.btn-large { font-size: 1.05rem; padding: 14px; margin-top: 8px; }
+
+/* Alerts */
+.alert { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 0.9rem; }
+.alert-error { background: #fff5f5; color: #c53030; border-left: 4px solid #fc8181; }
+.alert-success { background: #f0fff4; color: #276749; border-left: 4px solid #68d391; }
+
+/* Summary Box */
+.summary-box {
+    background: #f7fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 18px;
+    margin: 20px 0;
+}
+.summary-box h3 { margin-bottom: 12px; font-size: 1rem; color: #4a5568; }
+.summary-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 0.95rem; }
+.summary-row.total { border-top: 2px solid #cbd5e0; margin-top: 8px; padding-top: 12px; font-weight: bold; font-size: 1.05rem; color: #2b6cb0; }
+
+/* Payment Options */
+.payment-options { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.payment-option {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 16px;
+    border: 1.5px solid #cbd5e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+.payment-option:has(input:checked) { border-color: #2b6cb0; background: #ebf4ff; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th { background: #2b6cb0; color: white; padding: 12px; text-align: left; }
+td { padding: 11px 12px; border-bottom: 1px solid #e2e8f0; }
+tr:hover td { background: #f7fafc; }
+.badge { padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; }
+.badge-pending  { background: #fefcbf; color: #744210; }
+.badge-paid     { background: #c6f6d5; color: #22543d; }
+.badge-cancelled{ background: #fed7d7; color: #742a2a; }
+
+/* Links */
+.link-group { text-align: center; margin-top: 16px; font-size: 0.9rem; }
+.link-group a { color: #2b6cb0; text-decoration: none; font-weight: 500; }
+.link-group a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+    .payment-options { flex-direction: column; }
+}
